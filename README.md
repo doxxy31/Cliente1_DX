@@ -1,4 +1,3 @@
-# doxxy31.github.io
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -239,6 +238,7 @@
             font-size: 1rem;
         }
 
+        /* Botones con borde animado MEJORADO (más rápido) */
         .cta-button {
             display: inline-block;
             padding: 18px 40px;
@@ -250,7 +250,7 @@
             text-decoration: none;
             border-radius: 8px;
             box-shadow: var(--neon-shadow);
-            transition: all 0.3s ease;
+            transition: all 0.2s ease; /* Cambiado de 0.3s a 0.2s para ser más rápido */
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -274,11 +274,52 @@
             background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
             z-index: -1;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease; /* Más rápido */
         }
 
         .cta-button:hover::after {
             opacity: 1;
+        }
+
+        /* Efecto de borde animado en hover MEJORADO */
+        .border-hover-effect {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .border-hover-effect::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
+            background-size: 400% 400%;
+            border-radius: 17px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            animation: borderFlow 3s linear infinite;
+        }
+
+        .border-hover-effect:hover::before {
+            opacity: 1;
+        }
+
+        .border-hover-effect:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--neon-shadow-secondary);
+        }
+
+        @keyframes borderFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         /* Sección Funciones */
@@ -550,7 +591,7 @@
             font-weight: 700;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease; /* Más rápido */
         }
 
         .pricing-button:hover {
@@ -603,6 +644,205 @@
         .crossmark {
             color: #ff4d4d;
             font-size: 1.5rem;
+        }
+
+        /* NUEVA: Sección de Contacto */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(180deg, rgba(10, 14, 23, 0.9), rgba(16, 20, 31, 0.9));
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--dark-bg);
+            flex-shrink: 0;
+        }
+
+        .contact-details h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .contact-details p {
+            color: var(--text-secondary);
+        }
+
+        .contact-form-container {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 40px;
+            border: 1px solid rgba(0, 243, 255, 0.1);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .form-control {
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-color);
+            font-family: 'Exo 2', sans-serif;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+        }
+
+        .form-control::placeholder {
+            color: rgba(160, 160, 192, 0.5);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-button {
+            padding: 18px;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: var(--dark-bg);
+            border: none;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 10px;
+        }
+
+        .form-button:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--neon-shadow);
+        }
+
+        .map-container {
+            margin-top: 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .map-placeholder {
+            height: 300px;
+            background: linear-gradient(45deg, #1a1f35, #2a2f45);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+        }
+
+        .map-placeholder i {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        /* Garantía y Seguridad */
+        .guarantee {
+            background: linear-gradient(90deg, rgba(0, 243, 255, 0.1), rgba(157, 78, 221, 0.1));
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 50px 0;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .guarantee h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .guarantee p {
+            color: var(--text-color);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Efectos de partículas */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0) translateX(0); }
+            25% { transform: translateY(-100vh) translateX(100px); }
+            50% { transform: translateY(-50vh) translateX(-100px); }
+            75% { transform: translateY(-150vh) translateX(50px); }
+            100% { transform: translateY(0) translateX(0); }
+        }
+
+        /* Animaciones al hacer scroll */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Footer */
@@ -659,7 +899,7 @@
             background-color: var(--card-bg);
             color: var(--primary-color);
             font-size: 1.2rem;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease; /* Más rápido */
         }
 
         .social-link:hover {
@@ -669,16 +909,16 @@
             box-shadow: var(--neon-shadow);
         }
 
-        .contact-info {
+        .contact-info-list {
             list-style: none;
         }
 
-        .contact-info li {
+        .contact-info-list li {
             margin-bottom: 15px;
             color: var(--text-secondary);
         }
 
-        .contact-info i {
+        .contact-info-list i {
             color: var(--primary-color);
             margin-right: 10px;
             width: 20px;
@@ -690,66 +930,6 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: var(--text-secondary);
             font-size: 0.9rem;
-        }
-
-        /* Efectos de partículas */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-100vh) translateX(100px); }
-            50% { transform: translateY(-50vh) translateX(-100px); }
-            75% { transform: translateY(-150vh) translateX(50px); }
-            100% { transform: translateY(0) translateX(0); }
-        }
-
-        /* Garantía y Seguridad */
-        .guarantee {
-            background: linear-gradient(90deg, rgba(0, 243, 255, 0.1), rgba(157, 78, 221, 0.1));
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 50px 0;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-        }
-
-        .guarantee h3 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-
-        .guarantee p {
-            color: var(--text-color);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Animaciones al hacer scroll */
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .show {
-            opacity: 1;
-            transform: translateY(0);
         }
 
         /* Responsive */
@@ -816,6 +996,14 @@
                 display: block;
                 overflow-x: auto;
             }
+            
+            .contact-container {
+                gap: 30px;
+            }
+            
+            .contact-form-container {
+                padding: 30px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -842,6 +1030,12 @@
             
             .stat-number {
                 font-size: 2rem;
+            }
+            
+            .contact-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.3rem;
             }
         }
 
@@ -879,7 +1073,7 @@
             color: var(--primary-color);
             font-size: 2rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease; /* Más rápido */
         }
 
         .close-modal:hover {
@@ -1270,8 +1464,111 @@
         </div>
     </section>
     
+    <!-- NUEVA SECCIÓN: Contacto -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title hidden">Contáctanos</h2>
+            <p class="hidden" style="text-align: center; max-width: 700px; margin: 0 auto 60px; color: var(--text-secondary);">¿Tienes preguntas? ¿Necesitas una solución personalizada? Nuestro equipo está listo para ayudarte a transformar tu productividad.</p>
+            
+            <div class="contact-container">
+                <!-- Información de contacto -->
+                <div class="contact-info hidden">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Nuestra Ubicación</h3>
+                            <p>Av. Tecnológica 1234<br>Silicon Valley, CA 94000<br>Estados Unidos</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Teléfono</h3>
+                            <p>+1 (555) 123-4567<br>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Correo Electrónico</h3>
+                            <p>info@chronobot.com<br>soporte@chronobot.com<br>ventas@chronobot.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 2:00 PM<br>Timezone: PST (GMT-8)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Formulario de contacto -->
+                <div class="hidden">
+                    <div class="contact-form-container border-hover-effect">
+                        <h3 style="color: var(--primary-color); margin-bottom: 25px; text-align: center;">Envíanos un Mensaje</h3>
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <label for="name">Nombre Completo</label>
+                                <input type="text" id="name" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" class="form-control" placeholder="tu@email.com" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Asunto</label>
+                                <input type="text" id="subject" class="form-control" placeholder="¿Cómo podemos ayudarte?" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mensaje</label>
+                                <textarea id="message" class="form-control" placeholder="Describe tu consulta o proyecto..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="plan">Plan de Interés (Opcional)</label>
+                                <select id="plan" class="form-control">
+                                    <option value="">Selecciona un plan</option>
+                                    <option value="basico">Básico</option>
+                                    <option value="profesional">Profesional</option>
+                                    <option value="empresa">Empresa</option>
+                                    <option value="personalizado">Solución Personalizada</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="form-button">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="map-container hidden">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Ubicación de Nuestras Oficinas</h3>
+                    <p>Silicon Valley, California</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
@@ -1287,7 +1584,7 @@
                 
                 <div class="footer-column">
                     <h3>Contacto</h3>
-                    <ul class="contact-info">
+                    <ul class="contact-info-list">
                         <li><i class="fas fa-envelope"></i> info@chronobot.com</li>
                         <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
                         <li><i class="fas fa-map-marker-alt"></i> Silicon Valley, CA</li>
@@ -1345,6 +1642,7 @@
         const offerBanner = document.getElementById('offer-banner');
         const closeOffer = document.getElementById('close-offer');
         const pricingButtons = document.querySelectorAll('.pricing-button');
+        const contactForm = document.getElementById('contact-form');
         
         // Contador regresivo
         const daysElement = document.getElementById('days');
@@ -1507,6 +1805,43 @@
             });
         });
         
+        // Formulario de contacto
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                // Obtener valores del formulario
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+                const plan = document.getElementById('plan').value;
+                
+                // Validación simple
+                if (!name || !email || !subject || !message) {
+                    alert("Por favor, completa todos los campos requeridos.");
+                    return;
+                }
+                
+                // Simular envío del formulario
+                alert(`¡Gracias ${name}! Hemos recibido tu mensaje sobre "${subject}". Te contactaremos en ${email} en menos de 24 horas.`);
+                
+                // Limpiar formulario
+                contactForm.reset();
+                
+                // Mostrar confirmación visual
+                const submitButton = contactForm.querySelector('.form-button');
+                const originalText = submitButton.textContent;
+                submitButton.textContent = "¡Mensaje Enviado!";
+                submitButton.style.background = "linear-gradient(45deg, var(--accent-color), var(--primary-color))";
+                
+                setTimeout(() => {
+                    submitButton.textContent = originalText;
+                    submitButton.style.background = "linear-gradient(45deg, var(--primary-color), var(--secondary-color))";
+                }, 3000);
+            });
+        }
+        
         // Simular respuesta del bot
         demoSend.addEventListener('click', simulateBotResponse);
         demoInput.addEventListener('keypress', (e) => {
@@ -1535,6 +1870,8 @@
                 response = "¡Hola! Soy ChronoBot, tu asistente de calendario. Puedo ayudarte a programar reuniones, consultar tu disponibilidad o configurar recordatorios. ¿En qué puedo ayudarte?";
             } else if (command.includes('precio') || command.includes('costo') || command.includes('plan')) {
                 response = "Tenemos planes desde $9/mes. El plan Profesional (con 50% de descuento) incluye todas las funciones avanzadas por solo $19/mes. ¿Te gustaría conocer más detalles?";
+            } else if (command.includes('contacto') || command.includes('soporte') || command.includes('ayuda')) {
+                response = "Puedes contactar a nuestro equipo de soporte en soporte@chronobot.com o llamar al +1 (555) 123-4567. También puedes completar el formulario de contacto en nuestra página.";
             } else {
                 response = "He procesado tu solicitud. Como ejemplo, he añadido un evento de demostración a tu calendario para mostrarte cómo funciona ChronoBot.";
             }
