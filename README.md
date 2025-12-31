@@ -3,1942 +3,1225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChronoBot - Revoluciona Tu Productividad con IA</title>
+    <title>Bar Capricho del Canal | Carnes a la Brasa en Valladolid</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Exo+2:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥩</text></svg>">
     <style>
         :root {
-            --primary-color: #00f3ff;
-            --secondary-color: #9d4edd;
-            --accent-color: #00ff9d;
-            --dark-bg: #0a0e17;
-            --card-bg: rgba(16, 20, 31, 0.8);
-            --text-color: #e0e0ff;
-            --text-secondary: #a0a0c0;
-            --neon-shadow: 0 0 10px var(--primary-color),
-                            0 0 20px var(--primary-color),
-                            0 0 30px var(--primary-color);
-            --neon-shadow-secondary: 0 0 10px var(--secondary-color),
-                                    0 0 20px var(--secondary-color);
-            --neon-shadow-accent: 0 0 10px var(--accent-color),
-                                  0 0 20px var(--accent-color);
+            --color-brasa: #c2410c;
+            --color-tierra: #92400e;
+            --color-pizarra: #1f2937;
+            --color-crema: #fef3c7;
         }
-
+        
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
-
+        
         body {
-            font-family: 'Exo 2', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-color);
-            overflow-x: hidden;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
         }
-
+        
         h1, h2, h3, h4 {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        
+        .text-brasa {
+            color: var(--color-brasa);
         }
-
-        /* Fondo animado */
-        #bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #0a0e17, #0f1525, #1a1f35);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+        
+        .bg-brasa {
+            background-color: var(--color-brasa);
         }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        
+        .border-brasa {
+            border-color: var(--color-brasa);
         }
-
-        /* Banner de oferta */
-        .offer-banner {
-            background: linear-gradient(90deg, #ff0080, #9d4edd);
-            color: white;
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            position: relative;
-            overflow: hidden;
-            animation: pulseBanner 2s infinite;
-            box-shadow: 0 0 20px rgba(255, 0, 128, 0.5);
+        
+        .bg-tierra {
+            background-color: var(--color-tierra);
         }
-
-        @keyframes pulseBanner {
-            0%, 100% { box-shadow: 0 0 20px rgba(255, 0, 128, 0.5); }
-            50% { box-shadow: 0 0 30px rgba(255, 0, 128, 0.8); }
+        
+        .bg-pizarra {
+            background-color: var(--color-pizarra);
         }
-
-        .offer-banner .close-offer {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.2rem;
-            cursor: pointer;
+        
+        .bg-crema {
+            background-color: var(--color-crema);
         }
-
-        /* Header */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            transition: all 0.3s ease;
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('https://images.unsplash.com/photo-1546833999-b9f581a1996d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+        
+        .sticky-header {
             backdrop-filter: blur(10px);
-            background-color: rgba(10, 14, 23, 0.8);
-            border-bottom: 1px solid rgba(0, 243, 255, 0.1);
-        }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 243, 255, 0.1);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--primary-color);
-            text-shadow: var(--neon-shadow-secondary);
-        }
-
-        .logo i {
-            font-size: 2rem;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-menu a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1.1rem;
-            padding: 5px 10px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-menu a:hover {
-            color: var(--primary-color);
-            text-shadow: var(--neon-shadow-secondary);
-        }
-
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 2px;
-            background: var(--primary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-menu a:hover::after {
-            width: 80%;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Sección Hero */
-        .hero {
-            padding: 180px 0 120px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-            line-height: 1.2;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            max-width: 700px;
-            margin: 0 auto 40px;
-            color: var(--text-secondary);
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 60px;
-            flex-wrap: wrap;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: var(--accent-color);
-            text-shadow: var(--neon-shadow-accent);
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        /* Botones con borde animado MEJORADO (más rápido) */
-        .cta-button {
-            display: inline-block;
-            padding: 18px 40px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: var(--dark-bg);
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-decoration: none;
-            border-radius: 8px;
-            box-shadow: var(--neon-shadow);
-            transition: all 0.2s ease; /* Cambiado de 0.3s a 0.2s para ser más rápido */
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: none;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 0 25px var(--primary-color);
-        }
-
-        .cta-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--secondary-color), var(--accent-color));
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.2s ease; /* Más rápido */
-        }
-
-        .cta-button:hover::after {
-            opacity: 1;
-        }
-
-        /* Efecto de borde animado en hover MEJORADO */
-        .border-hover-effect {
-            position: relative;
-            background: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-        }
-
-        .border-hover-effect::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color), var(--primary-color));
-            background-size: 400% 400%;
-            border-radius: 17px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            animation: borderFlow 3s linear infinite;
-        }
-
-        .border-hover-effect:hover::before {
-            opacity: 1;
-        }
-
-        .border-hover-effect:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-shadow-secondary);
-        }
-
-        @keyframes borderFlow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Sección Funciones */
-        .features {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 60px;
-            color: var(--primary-color);
-            text-shadow: var(--neon-shadow-secondary);
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(0, 243, 255, 0.1);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            height: 100%;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(0, 243, 255, 0.05), rgba(157, 78, 221, 0.05));
-            z-index: -1;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-15px) rotateX(5deg);
-            box-shadow: var(--neon-shadow-secondary);
-            border-color: var(--secondary-color);
-        }
-
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 20px;
-            text-shadow: var(--neon-shadow-accent);
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--text-color);
-        }
-
-        .feature-card p {
-            color: var(--text-secondary);
-        }
-
-        /* Sección Capturas */
-        .screenshots {
-            padding: 100px 0;
-        }
-
-        .screenshots-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .screenshot-item {
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: all 0.4s ease;
-            position: relative;
-            height: 250px;
-            background: linear-gradient(45deg, #1a1f35, #2a2f45);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-        }
-
-        .screenshot-item:hover {
-            transform: scale(1.05);
-            box-shadow: var(--neon-shadow);
-        }
-
-        .screenshot-content {
-            text-align: center;
-            padding: 20px;
-        }
-
-        .screenshot-icon {
-            font-size: 4rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            text-shadow: var(--neon-shadow);
-        }
-
-        .screenshot-item h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-        }
-
-        /* Sección Testimonios */
-        .testimonials {
-            padding: 100px 0;
-            background: linear-gradient(180deg, rgba(10, 14, 23, 0.9), rgba(26, 31, 53, 0.9));
-        }
-
-        .testimonials-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 30px;
-            border-left: 5px solid var(--accent-color);
-            transition: all 0.3s ease;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-shadow-accent);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            color: var(--text-color);
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--accent-color);
-        }
-
-        .author-info h4 {
-            color: var(--primary-color);
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-
-        .author-info p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Sección Precios */
-        .pricing {
-            padding: 100px 0;
-        }
-
-        .pricing-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .pricing-card {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 40px 30px;
-            text-align: center;
-            transition: all 0.4s ease;
-            position: relative;
-            border: 1px solid rgba(0, 243, 255, 0.1);
-        }
-
-        .pricing-card.popular {
-            border: 2px solid var(--accent-color);
-            transform: scale(1.05);
-            box-shadow: var(--neon-shadow-accent);
-        }
-
-        .pricing-card.popular::before {
-            content: 'MÁS POPULAR';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--accent-color);
-            color: var(--dark-bg);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            font-family: 'Orbitron', sans-serif;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--neon-shadow-secondary);
-        }
-
-        .pricing-card.popular:hover {
-            transform: translateY(-10px) scale(1.05);
-        }
-
-        .pricing-header {
-            margin-bottom: 30px;
-        }
-
-        .pricing-name {
-            font-size: 1.5rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .pricing-price {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            color: var(--accent-color);
-            margin-bottom: 5px;
-        }
-
-        .pricing-period {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-        .pricing-features {
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .pricing-features li {
-            padding: 10px 0;
-            color: var(--text-secondary);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .pricing-features li i {
-            color: var(--accent-color);
-            margin-right: 10px;
-        }
-
-        .pricing-button {
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.2s ease; /* Más rápido */
-        }
-
-        .pricing-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--neon-shadow);
-        }
-
-        /* Sección Comparativa */
-        .comparison {
-            padding: 80px 0;
-            background: linear-gradient(180deg, rgba(10, 14, 23, 0.9), rgba(16, 20, 31, 0.9));
-        }
-
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .comparison-table th, .comparison-table td {
-            padding: 20px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .comparison-table th {
-            background-color: rgba(0, 243, 255, 0.1);
-            color: var(--primary-color);
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-        }
-
-        .comparison-table td:first-child {
-            text-align: left;
-            font-weight: 600;
-            color: var(--text-color);
-        }
-
-        .comparison-table tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.03);
-        }
-
-        .checkmark {
-            color: var(--accent-color);
-            font-size: 1.5rem;
-        }
-
-        .crossmark {
-            color: #ff4d4d;
-            font-size: 1.5rem;
-        }
-
-        /* NUEVA: Sección de Contacto */
-        .contact {
-            padding: 100px 0;
-            background: linear-gradient(180deg, rgba(10, 14, 23, 0.9), rgba(16, 20, 31, 0.9));
-        }
-
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 50px;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: var(--dark-bg);
-            flex-shrink: 0;
-        }
-
-        .contact-details h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-        }
-
-        .contact-details p {
-            color: var(--text-secondary);
-        }
-
-        .contact-form-container {
-            background-color: var(--card-bg);
-            border-radius: 15px;
-            padding: 40px;
-            border: 1px solid rgba(0, 243, 255, 0.1);
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            color: var(--primary-color);
-            font-weight: 500;
-        }
-
-        .form-control {
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(0, 243, 255, 0.2);
-            border-radius: 8px;
-            color: var(--text-color);
-            font-family: 'Exo 2', sans-serif;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
-        }
-
-        .form-control::placeholder {
-            color: rgba(160, 160, 192, 0.5);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        .form-button {
-            padding: 18px;
-            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-            color: var(--dark-bg);
-            border: none;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            margin-top: 10px;
-        }
-
-        .form-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--neon-shadow);
-        }
-
-        .map-container {
-            margin-top: 40px;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(0, 243, 255, 0.2);
-        }
-
-        .map-placeholder {
-            height: 300px;
-            background: linear-gradient(45deg, #1a1f35, #2a2f45);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-        }
-
-        .map-placeholder i {
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        /* Garantía y Seguridad */
-        .guarantee {
-            background: linear-gradient(90deg, rgba(0, 243, 255, 0.1), rgba(157, 78, 221, 0.1));
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-            margin: 50px 0;
-            border: 1px solid rgba(0, 243, 255, 0.2);
-        }
-
-        .guarantee h3 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
-        }
-
-        .guarantee p {
-            color: var(--text-color);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        /* Efectos de partículas */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .particle {
-            position: absolute;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite linear;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0) translateX(0); }
-            25% { transform: translateY(-100vh) translateX(100px); }
-            50% { transform: translateY(-50vh) translateX(-100px); }
-            75% { transform: translateY(-150vh) translateX(50px); }
-            100% { transform: translateY(0) translateX(0); }
-        }
-
-        /* Animaciones al hacer scroll */
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
-        }
-
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Footer */
-        footer {
-            background-color: rgba(5, 9, 15, 0.9);
-            padding: 70px 0 30px;
-            border-top: 1px solid rgba(0, 243, 255, 0.1);
-            margin-top: 50px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-column h3 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 25px;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .footer-column p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: var(--card-bg);
-            color: var(--primary-color);
-            font-size: 1.2rem;
-            transition: all 0.2s ease; /* Más rápido */
-        }
-
-        .social-link:hover {
-            background-color: var(--primary-color);
-            color: var(--dark-bg);
+            background-color: rgba(31, 41, 55, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .floating-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .floating-shadow:hover {
             transform: translateY(-5px);
-            box-shadow: var(--neon-shadow);
+            box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.25);
         }
-
-        .contact-info-list {
-            list-style: none;
+        
+        .floating-shadow-lg {
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
         }
-
-        .contact-info-list li {
-            margin-bottom: 15px;
-            color: var(--text-secondary);
+        
+        .tab-button {
+            transition: all 0.3s ease;
         }
-
-        .contact-info-list i {
-            color: var(--primary-color);
-            margin-right: 10px;
-            width: 20px;
+        
+        .tab-button.active {
+            background-color: var(--color-brasa);
+            color: white;
+            transform: scale(1.05);
         }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        
+        .map-container {
+            overflow: hidden;
+            border-radius: 12px;
+            height: 400px;
         }
-
-        /* Responsive */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 2.8rem;
-            }
-            
-            .section-title {
-                font-size: 2.2rem;
-            }
-            
-            .pricing-card.popular {
-                transform: none;
-            }
+        
+        .about-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
-
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 80px;
-                left: 0;
-                width: 100%;
-                background-color: rgba(10, 14, 23, 0.95);
-                flex-direction: column;
-                align-items: center;
-                padding: 20px 0;
-                gap: 0;
-                transform: translateY(-100%);
-                opacity: 0;
-                transition: all 0.3s ease;
-                backdrop-filter: blur(10px);
-                z-index: 999;
-            }
-
-            .nav-menu.active {
-                transform: translateY(0);
-                opacity: 1;
-            }
-
-            .nav-menu a {
-                padding: 15px;
-                width: 100%;
-                text-align: center;
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .hero-stats {
-                gap: 20px;
-            }
-            
-            .comparison-table {
-                display: block;
-                overflow-x: auto;
-            }
-            
-            .contact-container {
-                gap: 30px;
-            }
-            
-            .contact-form-container {
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 150px 0 80px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .cta-button {
-                padding: 15px 30px;
-                font-size: 1rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .feature-card, .screenshot-item, .testimonial-card, .pricing-card {
-                padding: 20px;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-            
-            .contact-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 1.3rem;
-            }
-        }
-
-        /* Modal de demostración */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-        }
-
-        .modal-content {
-            background: linear-gradient(135deg, var(--dark-bg), #1a1f35);
-            width: 90%;
-            max-width: 600px;
-            border-radius: 15px;
-            padding: 40px;
-            text-align: center;
-            border: 1px solid var(--primary-color);
-            box-shadow: var(--neon-shadow);
+        
+        .section-title {
             position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
         }
-
-        .close-modal {
+        
+        .section-title::after {
+            content: '';
             position: absolute;
-            top: 20px;
-            right: 20px;
-            color: var(--primary-color);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: all 0.2s ease; /* Más rápido */
+            bottom: -10px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background-color: var(--color-brasa);
         }
-
-        .close-modal:hover {
-            color: var(--accent-color);
-            transform: rotate(90deg);
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-
-        .modal h2 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-            font-size: 2rem;
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 5rem;
+            color: rgba(194, 65, 12, 0.1);
+            font-family: serif;
         }
-
-        .modal p {
-            margin-bottom: 30px;
-            color: var(--text-secondary);
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
         }
-
-        .demo-placeholder {
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-content {
+            animation: slideUp 0.8s ease;
+        }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Estilos para la galería en Sobre Nosotros */
+        .gallery-container {
+            --gap: 14px;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: var(--gap);
+        }
+        
+        .gallery-card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #18181a;
+            border: 1px solid rgba(255,255,255,.08);
+            cursor: zoom-in;
+        }
+        
+        .gallery-card img {
             width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, #1a1f35, #2a2f45);
-            border-radius: 10px;
-            display: flex;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform .25s ease;
+        }
+        
+        .gallery-card:hover img { 
+            transform: scale(1.03); 
+        }
+        
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,.78);
+            display: none;
             align-items: center;
             justify-content: center;
-            margin: 20px 0;
-            border: 1px solid var(--primary-color);
-        }
-
-        .demo-placeholder i {
-            font-size: 4rem;
-            color: var(--primary-color);
+            padding: 18px;
+            z-index: 9999;
         }
         
-        /* Contador regresivo */
-        .countdown {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 30px 0;
-            border: 1px solid var(--primary-color);
+        .lightbox.open { 
+            display: flex; 
         }
         
-        .countdown h4 {
-            color: var(--accent-color);
-            margin-bottom: 15px;
+        .lightbox img {
+            max-width: min(1100px, 96vw);
+            max-height: 92vh;
+            border-radius: 14px;
+            box-shadow: 0 10px 40px rgba(0,0,0,.6);
         }
         
-        .countdown-timer {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-        
-        .countdown-item {
-            text-align: center;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 8px;
-            min-width: 70px;
-        }
-        
-        .countdown-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-        }
-        
-        .countdown-label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-            margin-top: 5px;
+        .lightbox .close {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 44px;
+            height: 44px;
+            border: 0;
+            border-radius: 999px;
+            background: rgba(255,255,255,.12);
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
         }
     </style>
 </head>
-<body>
-    <!-- Fondo animado -->
-    <div id="bg-animation"></div>
-    
-    <!-- Partículas flotantes -->
-    <div class="particles" id="particles"></div>
-    
-    <!-- Banner de oferta especial -->
-    <div class="offer-banner" id="offer-banner">
-        <span>🔥 OFERTA POR LANZAMIENTO: 50% DE DESCUENTO EN EL PRIMER MES | CÓDIGO: CHRONO50</span>
-        <button class="close-offer" id="close-offer">×</button>
-    </div>
-    
-    <!-- Header -->
-    <header id="header">
-        <div class="container header-container">
-            <div class="logo">
-                <i class="fas fa-robot"></i>
-                <span>ChronoBot</span>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/34682745435?text=Hola,%20me%20gustaría%20hacer%20una%20reserva%20en%20Bar%20Capricho%20del%20Canal" 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-xl hover:bg-green-700 transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Header Sticky -->
+    <header class="sticky top-0 z-50 sticky-header py-4">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <span class="text-3xl font-bold text-white">🥩</span>
+                    <div class="ml-3">
+                        <h1 class="text-xl md:text-2xl font-bold text-white font-serif">Bar Capricho del Canal</h1>
+                        <p class="text-xs text-gray-300 hidden md:block">Carnes a la brasa desde 1998</p>
+                    </div>
+                </div>
+                
+                <!-- Navegación móvil -->
+                <div class="md:hidden">
+                    <button id="menu-toggle" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Navegación desktop (Tabs) -->
+                <nav class="hidden md:flex space-x-1 bg-gray-800 p-1 rounded-lg">
+                    <button class="tab-button active px-6 py-2 rounded-md font-medium text-white" data-tab="inicio">
+                        <i class="fas fa-home mr-2"></i>Inicio
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-md font-medium text-gray-300 hover:text-white hover:bg-gray-700" data-tab="carta">
+                        <i class="fas fa-utensils mr-2"></i>Carta
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-md font-medium text-gray-300 hover:text-white hover:bg-gray-700" data-tab="nosotros">
+                        <i class="fas fa-info-circle mr-2"></i>Sobre Nosotros
+                    </button>
+                    <button class="tab-button px-6 py-2 rounded-md font-medium text-gray-300 hover:text-white hover:bg-gray-700" data-tab="ubicacion">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Ubicación
+                    </button>
+                </nav>
+                
+                <!-- Botón Llamar Ahora -->
+                <a href="tel:682745435" class="hidden md:inline-flex items-center bg-brasa hover:bg-orange-700 text-white font-semibold py-3 px-5 rounded-lg transition-all duration-300 hover:scale-105 shadow-md">
+                    <i class="fas fa-phone-alt mr-2"></i>Llamar Ahora
+                </a>
             </div>
             
-            <button class="mobile-menu-btn" id="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <nav class="nav-menu" id="nav-menu">
-                <a href="#home">Inicio</a>
-                <a href="#features">Funciones</a>
-                <a href="#testimonials">Testimonios</a>
-                <a href="#pricing">Precios</a>
-                <a href="#contact">Contacto</a>
-            </nav>
+            <!-- Menú móvil desplegable -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2 bg-gray-800 rounded-lg p-4">
+                <div class="flex flex-col space-y-3">
+                    <button class="tab-button active text-left text-white font-medium py-2 px-4 rounded bg-gray-700" data-tab="inicio">
+                        <i class="fas fa-home mr-3"></i>Inicio
+                    </button>
+                    <button class="tab-button text-left text-gray-300 font-medium py-2 px-4 rounded hover:bg-gray-700" data-tab="carta">
+                        <i class="fas fa-utensils mr-3"></i>Carta
+                    </button>
+                    <button class="tab-button text-left text-gray-300 font-medium py-2 px-4 rounded hover:bg-gray-700" data-tab="nosotros">
+                        <i class="fas fa-info-circle mr-3"></i>Sobre Nosotros
+                    </button>
+                    <button class="tab-button text-left text-gray-300 font-medium py-2 px-4 rounded hover:bg-gray-700" data-tab="ubicacion">
+                        <i class="fas fa-map-marker-alt mr-3"></i>Ubicación
+                    </button>
+                    <a href="tel:682745435" class="bg-brasa hover:bg-orange-700 text-white font-semibold py-3 px-4 rounded-lg transition-colors text-center mt-2">
+                        <i class="fas fa-phone-alt mr-2"></i>Llamar Ahora
+                    </a>
+                </div>
+            </div>
         </div>
     </header>
-    
-    <!-- Sección Hero -->
-    <section class="hero" id="home">
-        <div class="container">
-            <h1 class="hidden">Aumenta tu productividad 3x con IA</h1>
-            <p class="hidden">ChronoBot automatiza la gestión de tu agenda con inteligencia artificial. Ahorra 10 horas a la semana en tareas administrativas y enfócate en lo que realmente importa.</p>
-            
-            <div class="countdown hidden">
-                <h4>¡Oferta especial por tiempo limitado!</h4>
-                <div class="countdown-timer" id="countdown-timer">
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="days">00</div>
-                        <div class="countdown-label">DÍAS</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="hours">00</div>
-                        <div class="countdown-label">HORAS</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="minutes">00</div>
-                        <div class="countdown-label">MINUTOS</div>
-                    </div>
-                    <div class="countdown-item">
-                        <div class="countdown-number" id="seconds">00</div>
-                        <div class="countdown-label">SEGUNDOS</div>
-                    </div>
-                </div>
-            </div>
-            
-            <button class="cta-button" id="demo-btn">Probar Demo Gratis</button>
-            
-            <div class="hero-stats hidden">
-                <div class="stat-item">
-                    <div class="stat-number">10,000+</div>
-                    <div class="stat-label">Usuarios Activos</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">97%</div>
-                    <div class="stat-label">Satisfacción</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">500k+</div>
-                    <div class="stat-label">Eventos Gestionados</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">10h</div>
-                    <div class="stat-label">Ahorro Semanal</div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección Funciones -->
-    <section class="features" id="features">
-        <div class="container">
-            <h2 class="section-title hidden">Funciones que Revolucionan tu Productividad</h2>
-            <div class="features-grid">
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-plus"></i>
-                    </div>
-                    <h3>Crear Eventos con IA</h3>
-                    <p>Añade eventos a tu calendario con comandos de voz o texto. ChronoBot detecta automáticamente fechas y horas.</p>
-                </div>
-                
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-calendar-times"></i>
-                    </div>
-                    <h3>Eliminar Eventos</h3>
-                    <p>Elimina o cancela eventos con un simple comando. ChronoBot se encarga de notificar a todos los participantes.</p>
-                </div>
-                
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-edit"></i>
-                    </div>
-                    <h3>Modificar Eventos</h3>
-                    <p>Cambia fecha, hora, lugar o detalles de cualquier evento. ChronoBot actualiza automáticamente todos los calendarios vinculados.</p>
-                </div>
-                
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-search"></i>
-                    </div>
-                    <h3>Consultar Disponibilidad</h3>
-                    <p>Comprueba los horarios disponibles de tu equipo para encontrar el mejor momento para una reunión.</p>
-                </div>
-                
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3>Recordatorios Inteligentes</h3>
-                    <p>Recibe notificaciones antes de cada evento, con tiempo suficiente para prepararte.</p>
-                </div>
-                
-                <div class="feature-card hidden">
-                    <div class="feature-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Sincronización Multiplataforma</h3>
-                    <p>Conecta con Google Calendar, Outlook, Apple Calendar y más. ChronoBot sincroniza todos tus calendarios.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección Testimonios -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <h2 class="section-title hidden">Lo que dicen nuestros clientes</h2>
-            <div class="testimonials-container">
-                <div class="testimonial-card hidden">
-                    <div class="testimonial-text">
-                        "ChronoBot ha cambiado completamente la forma en que gestiono mi tiempo. Antes perdía horas organizando mi agenda, ahora solo le digo lo que necesito y listo."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Ana García" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Ana García</h4>
-                            <p>CEO, TechSolutions</p>
+
+    <main class="min-h-screen">
+        <!-- Pestaña INICIO -->
+        <section id="inicio-tab" class="tab-content active">
+            <!-- Hero Section -->
+            <div class="hero-bg min-h-[90vh] flex items-center">
+                <div class="container mx-auto px-4 py-16">
+                    <div class="max-w-3xl hero-content">
+                        <div class="inline-block mb-6">
+                            <span class="bg-brasa text-white px-4 py-2 rounded-full text-sm font-bold uppercase tracking-wider">Especialidad de la casa</span>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card hidden">
-                    <div class="testimonial-text">
-                        "Implementamos ChronoBot en toda la empresa y la productividad aumentó un 40%. Los equipos ahora se enfocan en su trabajo, no en organizar reuniones."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Carlos Ruiz" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Carlos Ruiz</h4>
-                            <p>Director de Operaciones</p>
+                        <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif leading-tight">
+                            Auténticas Carnes a la <span class="text-orange-300">Brasa</span>
+                        </h2>
+                        <p class="text-2xl text-gray-200 mb-10 leading-relaxed max-w-2xl">
+                            El mejor lechazo, solomillo y ambiente en Valladolid. Tradición y sabor desde 1998.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <button class="tab-trigger bg-brasa hover:bg-orange-700 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition-all duration-300 hover:scale-105 shadow-xl" data-tab="carta">
+                                <i class="fas fa-utensils mr-2"></i>Ver Carta Completa
+                            </button>
+                            <button class="tab-trigger bg-transparent border-2 border-white hover:bg-white/20 text-white font-bold py-4 px-8 rounded-lg text-center text-lg transition-all duration-300" data-tab="ubicacion">
+                                <i class="far fa-calendar-alt mr-2"></i>Reservar Mesa
+                            </button>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="testimonial-card hidden">
-                    <div class="testimonial-text">
-                        "Como freelancer, ChronoBot me ha ayudado a organizar mis proyectos con clientes de todo el mundo. La integración con diferentes zonas horarias es increíble."
-                    </div>
-                    <div class="testimonial-author">
-                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=200&q=80" alt="Laura Méndez" class="author-avatar">
-                        <div class="author-info">
-                            <h4>Laura Méndez</h4>
-                            <p>Diseñadora UX Freelance</p>
+                        
+                        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="text-4xl text-white font-bold mb-2">25+</div>
+                                <div class="text-gray-300">Años de experiencia</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl text-white font-bold mb-2">4.5</div>
+                                <div class="text-gray-300">Valoración media</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl text-white font-bold mb-2">50+</div>
+                                <div class="text-gray-300">Platos en carta</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-4xl text-white font-bold mb-2">120+</div>
+                                <div class="text-gray-300">Clientes diarios</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
-    <!-- Sección de Garantía -->
-    <section class="container">
-        <div class="guarantee hidden">
-            <h3>Garantía de Satisfacción 100%</h3>
-            <p>Si ChronoBot no aumenta tu productividad en al menos un 30% durante el primer mes, te devolvemos tu dinero. Sin preguntas, sin complicaciones.</p>
-            <p><i class="fas fa-shield-alt" style="color: var(--accent-color); margin-right: 10px;"></i>Tu información está 100% protegida con encriptación de grado militar</p>
-        </div>
-    </section>
-    
-    <!-- Sección Precios -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2 class="section-title hidden">Planes para Cada Necesidad</h2>
-            <div class="pricing-container">
-                <div class="pricing-card hidden">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Básico</h3>
-                        <div class="pricing-price">$9<span style="font-size: 1.5rem;">/mes</span></div>
-                        <div class="pricing-period">Ideal para individuos</div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Hasta 5 calendarios</li>
-                        <li><i class="fas fa-check"></i> 100 eventos/mes</li>
-                        <li><i class="fas fa-check"></i> Recordatorios básicos</li>
-                        <li><i class="fas fa-check"></i> Soporte por email</li>
-                        <li><i class="fas fa-times"></i> Integración con CRM</li>
-                        <li><i class="fas fa-times"></i> Análisis de productividad</li>
-                    </ul>
-                    <button class="pricing-button" data-plan="basico">Comenzar Ahora</button>
-                </div>
-                
-                <div class="pricing-card popular hidden">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Profesional</h3>
-                        <div class="pricing-price">$19<span style="font-size: 1.5rem;">/mes</span></div>
-                        <div class="pricing-period">Ideal para equipos</div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Calendarios ilimitados</li>
-                        <li><i class="fas fa-check"></i> Eventos ilimitados</li>
-                        <li><i class="fas fa-check"></i> Recordatorios inteligentes</li>
-                        <li><i class="fas fa-check"></i> Soporte prioritario</li>
-                        <li><i class="fas fa-check"></i> Integración con CRM</li>
-                        <li><i class="fas fa-check"></i> Análisis de productividad</li>
-                    </ul>
-                    <button class="pricing-button" data-plan="profesional">Oferta Especial - 50% OFF</button>
-                </div>
-                
-                <div class="pricing-card hidden">
-                    <div class="pricing-header">
-                        <h3 class="pricing-name">Empresa</h3>
-                        <div class="pricing-price">$49<span style="font-size: 1.5rem;">/mes</span></div>
-                        <div class="pricing-period">Ideal para organizaciones</div>
-                    </div>
-                    <ul class="pricing-features">
-                        <li><i class="fas fa-check"></i> Todo en Profesional</li>
-                        <li><i class="fas fa-check"></i> Hasta 50 usuarios</li>
-                        <li><i class="fas fa-check"></i> API personalizada</li>
-                        <li><i class="fas fa-check"></i> Soporte 24/7</li>
-                        <li><i class="fas fa-check"></i> Entrenamiento personalizado</li>
-                        <li><i class="fas fa-check"></i> SLA 99.9%</li>
-                    </ul>
-                    <button class="pricing-button" data-plan="empresa">Contactar Ventas</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección Comparativa -->
-    <section class="comparison">
-        <div class="container">
-            <h2 class="section-title hidden">Compara con Otras Soluciones</h2>
-            <div class="hidden">
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Característica</th>
-                            <th>ChronoBot</th>
-                            <th>Google Calendar</th>
-                            <th>Calendly</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Inteligencia Artificial</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Comandos de Voz</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Automatización Completa</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Integración Multiplataforma</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Análisis de Productividad</td>
-                            <td><i class="fas fa-check checkmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                            <td><i class="fas fa-times crossmark"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Precio Mensual</td>
-                            <td><strong>$19</strong></td>
-                            <td><strong>$0</strong></td>
-                            <td><strong>$12</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
-    <!-- NUEVA SECCIÓN: Contacto -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title hidden">Contáctanos</h2>
-            <p class="hidden" style="text-align: center; max-width: 700px; margin: 0 auto 60px; color: var(--text-secondary);">¿Tienes preguntas? ¿Necesitas una solución personalizada? Nuestro equipo está listo para ayudarte a transformar tu productividad.</p>
             
-            <div class="contact-container">
-                <!-- Información de contacto -->
-                <div class="contact-info hidden">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
+            <!-- Especialidades destacadas -->
+            <section class="py-16 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="section-title text-3xl md:text-4xl font-bold text-pizarra">Nuestras Especialidades</h2>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                            Descubre los platos más emblemáticos de nuestra casa, preparados con la mejor materia prima y el cuidado de siempre.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Especialidad 1 -->
+                        <div class="rounded-xl overflow-hidden floating-shadow bg-white">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                                     alt="Chuleta de vaca vieja" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-3">
+                                    <h3 class="text-xl font-bold text-gray-800">Chuleta Vaca Vieja</h3>
+                                </div>
+                                <p class="text-gray-600 mb-4">Nuestra especialidad más demandada. Carne madurada de vaca vieja a la brasa, con su punto justo de sal.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-fire text-orange-500 mr-2"></i>
+                                    <span>Cocción a la brasa de encina</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Nuestra Ubicación</h3>
-                            <p>Av. Tecnológica 1234<br>Silicon Valley, CA 94000<br>Estados Unidos</p>
+                        
+                        <!-- Especialidad 2 -->
+                        <div class="rounded-xl overflow-hidden floating-shadow bg-white">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1586190848861-99aa4a171e90?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80" 
+                                     alt="Lechazo asado" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-3">
+                                    <h3 class="text-xl font-bold text-gray-800">Lechazo Asado</h3>
+                                </div>
+                                <p class="text-gray-600 mb-4">Tierno lechazo asado en horno de leña, una receta tradicional de Castilla que mantiene todo su sabor.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-clock text-orange-500 mr-2"></i>
+                                    <span>4 horas de cocción lenta</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Especialidad 3 -->
+                        <div class="rounded-xl overflow-hidden floating-shadow bg-white">
+                            <div class="h-56 overflow-hidden">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2067&q=80" 
+                                     alt="Entrecot de lomo alto" class="w-full h-full object-cover">
+                            </div>
+                            <div class="p-6">
+                                <div class="mb-3">
+                                    <h3 class="text-xl font-bold text-gray-800">Entrecot Lomo Alto</h3>
+                                </div>
+                                <p class="text-gray-600 mb-4">Jugoso entrecot de lomo alto con una textura única y un sabor intenso a brasa.</p>
+                                <div class="flex items-center text-sm text-gray-500">
+                                    <i class="fas fa-weight-hanging text-orange-500 mr-2"></i>
+                                    <span>Corte premium de 400g aprox.</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Teléfono</h3>
-                            <p>+1 (555) 123-4567<br>Lunes a Viernes: 9:00 AM - 6:00 PM</p>
-                        </div>
+                    <div class="text-center mt-12">
+                        <button class="tab-trigger inline-flex items-center bg-gray-800 hover:bg-black text-white font-bold py-3 px-8 rounded-lg transition-all duration-300" data-tab="carta">
+                            Ver toda la carta <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Testimonios -->
+            <section class="py-16 bg-gray-100">
+                <div class="container mx-auto px-4">
+                    <div class="text-center mb-12">
+                        <h2 class="section-title text-3xl md:text-4xl font-bold text-pizarra">Lo que dicen nuestros clientes</h2>
+                        <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                            Más de 25 años haciendo disfrutar a nuestros clientes con la mejor carne a la brasa de Valladolid.
+                        </p>
                     </div>
                     
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="testimonial-card">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-500">Hace 2 semanas</span>
+                            </div>
+                            <p class="text-gray-700 mb-6 italic">
+                                "La mejor carne que he probado en Valladolid. El chuletón de vaca vieja está espectacular. El trato del personal, inmejorable. Volveremos sin duda."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Carlos G.</h4>
+                                    <p class="text-sm text-gray-500">Google Reviews</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <h3>Correo Electrónico</h3>
-                            <p>info@chronobot.com<br>soporte@chronobot.com<br>ventas@chronobot.com</p>
+                        
+                        <div class="testimonial-card">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="ml-2 text-gray-500">Hace 1 mes</span>
+                            </div>
+                            <p class="text-gray-700 mb-6 italic">
+                                "Ambiente familiar perfecto para ir con niños. La terraza es amplia y el parking gratuito un acierto. El lechazo estaba delicioso."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">María L.</h4>
+                                    <p class="text-sm text-gray-500">TripAdvisor</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="flex items-center mb-4">
+                                <div class="flex text-yellow-400">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="ml-2 text-gray-500">Hace 3 días</span>
+                            </div>
+                            <p class="text-gray-700 mb-6 italic">
+                                "Fui con mis perros y fueron muy bien recibidos. La atención es excelente y la comida de primera. El solomillo de vaca vieja para chuparse los dedos."
+                            </p>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center mr-3">
+                                    <i class="fas fa-user text-gray-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold">Javier R.</h4>
+                                    <p class="text-sm text-gray-500">Facebook</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
+                </div>
+            </section>
+        </section>
+
+        <!-- Pestaña CARTA -->
+        <section id="carta-tab" class="tab-content py-12">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold text-pizarra">Nuestra Carta</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                        Disfruta de nuestra selección de platos tradicionales y carnes a la brasa, preparados con la mejor materia prima.
+                    </p>
+                    <div class="mt-8 p-4 bg-yellow-50 border-l-4 border-yellow-400 max-w-3xl mx-auto rounded-r-lg">
+                        <p class="text-gray-700"><i class="fas fa-exclamation-circle text-yellow-500 mr-2"></i>Informar al camarero en caso de intolerancias o alergias alimentarias.</p>
+                    </div>
+                </div>
+                
+                <!-- Navegación de categorías de carta -->
+                <div class="flex flex-wrap justify-center gap-2 mb-12">
+                    <button class="category-btn active bg-brasa text-white px-5 py-3 rounded-lg font-medium flex items-center" data-category="ensaladas">
+                        <i class="fas fa-leaf mr-2"></i> Ensaladas
+                    </button>
+                    <button class="category-btn bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-3 rounded-lg font-medium flex items-center" data-category="raciones">
+                        <i class="fas fa-fire mr-2"></i> Raciones
+                    </button>
+                    <button class="category-btn bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-3 rounded-lg font-medium flex items-center" data-category="pinchos">
+                        <i class="fas fa-utensils mr-2"></i> Pinchos
+                    </button>
+                    <button class="category-btn bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-3 rounded-lg font-medium flex items-center" data-category="iberico">
+                        <i class="fas fa-piggy-bank mr-2"></i> Ibérico
+                    </button>
+                    <button class="category-btn bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-3 rounded-lg font-medium flex items-center" data-category="carnes">
+                        <i class="fas fa-drumstick-bite mr-2"></i> Carnes
+                    </button>
+                    <button class="category-btn bg-gray-200 hover:bg-gray-300 text-gray-800 px-5 py-3 rounded-lg font-medium flex items-center" data-category="pescado">
+                        <i class="fas fa-fish mr-2"></i> Pescado
+                    </button>
+                </div>
+                
+                <!-- Ensaladas -->
+                <div id="ensaladas" class="menu-category active">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Ensaladas</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Ensalada mixta</h4>
+                            <p class="text-gray-600 text-sm">(lechuga, cebolla, tomate, huevo duro, atún, espárragos y aceitunas)</p>
                         </div>
-                        <div class="contact-details">
-                            <h3>Horario de Atención</h3>
-                            <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 2:00 PM<br>Timezone: PST (GMT-8)</p>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Ensalada normal</h4>
+                            <p class="text-gray-600 text-sm">(lechuga, cebolla y tomate)</p>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Formulario de contacto -->
-                <div class="hidden">
-                    <div class="contact-form-container border-hover-effect">
-                        <h3 style="color: var(--primary-color); margin-bottom: 25px; text-align: center;">Envíanos un Mensaje</h3>
-                        <form class="contact-form" id="contact-form">
-                            <div class="form-group">
-                                <label for="name">Nombre Completo</label>
-                                <input type="text" id="name" class="form-control" placeholder="Tu nombre" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Correo Electrónico</label>
-                                <input type="email" id="email" class="form-control" placeholder="tu@email.com" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Asunto</label>
-                                <input type="text" id="subject" class="form-control" placeholder="¿Cómo podemos ayudarte?" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Mensaje</label>
-                                <textarea id="message" class="form-control" placeholder="Describe tu consulta o proyecto..." required></textarea>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="plan">Plan de Interés (Opcional)</label>
-                                <select id="plan" class="form-control">
-                                    <option value="">Selecciona un plan</option>
-                                    <option value="basico">Básico</option>
-                                    <option value="profesional">Profesional</option>
-                                    <option value="empresa">Empresa</option>
-                                    <option value="personalizado">Solución Personalizada</option>
-                                </select>
-                            </div>
-                            
-                            <button type="submit" class="form-button">Enviar Mensaje</button>
-                        </form>
+                <!-- Raciones -->
+                <div id="raciones" class="menu-category hidden">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Raciones</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Patatas fritas</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Croquetas</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Pulpo a la brasa o gallega</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Rabas</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Langostinos a la plancha</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Chuletillas de lechazo a la brasa</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Chorizo criollo</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Torrezno a la brasa</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Morcilla a la brasa</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Panceta a la brasa</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pinchos -->
+                <div id="pinchos" class="menu-category hidden">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Pinchos</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Pincho de lechazo a la brasa</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Pincho de pollo a la brasa</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Ibérico -->
+                <div id="iberico" class="menu-category hidden">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Ibérico</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Jamón ibérico</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Cecina de León</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Quesos</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Surtido de ibéricos</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Carnes -->
+                <div id="carnes" class="menu-category hidden">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Carnes</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Chuletas</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Entrecot</h4>
+                        </div>
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Hamburguesa de vacuno</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pescado -->
+                <div id="pescado" class="menu-category hidden">
+                    <h3 class="text-2xl md:text-3xl font-bold mb-8 text-pizarra border-b-2 border-gray-200 pb-4">Pescado</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="menu-item bg-white rounded-xl p-6 floating-shadow">
+                            <h4 class="font-bold text-lg text-gray-800 mb-2">Pescado del día</h4>
+                            <p class="text-gray-600 text-sm">(Consultar disponibilidad con el camarero)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Información adicional -->
+                <div class="mt-16 p-8 bg-gray-800 text-white rounded-2xl">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">🥩</div>
+                            <h4 class="text-xl font-bold mb-2">Carne de Calidad</h4>
+                            <p class="text-gray-300">Seleccionamos la mejor carne de proveedores locales</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">🔥</div>
+                            <h4 class="text-xl font-bold mb-2">Brasa de Encina</h4>
+                            <p class="text-gray-300">Cocción tradicional con leña de encina para un sabor único</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-5xl mb-4">👨‍🍳</div>
+                            <h4 class="text-xl font-bold mb-2">Chef Experimentado</h4>
+                            <p class="text-gray-300">Más de 25 años de experiencia en carnes a la brasa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pestaña SOBRE NOSOTROS -->
+        <section id="nosotros-tab" class="tab-content py-12">
+            <div class="about-bg py-16">
+                <div class="container mx-auto px-4">
+                    <div class="max-w-4xl mx-auto text-center text-white">
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6 font-serif">Nuestra Historia</h2>
+                        <p class="text-xl mb-10 leading-relaxed">
+                            Desde 1998, en Bar Capricho del Canal hemos servido las mejores carnes a la brasa de Valladolid, 
+                            manteniendo la tradición y el sabor de la cocina castellana.
+                        </p>
                     </div>
                 </div>
             </div>
             
-            <!-- Mapa -->
-            <div class="map-container hidden">
-                <div class="map-placeholder">
-                    <i class="fas fa-map-marked-alt"></i>
-                    <h3>Ubicación de Nuestras Oficinas</h3>
-                    <p>Silicon Valley, California</p>
+            <div class="container mx-auto px-4 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                    <div>
+                        <h3 class="text-3xl font-bold mb-6 text-pizarra">Ambiente Acogedor y Familiar</h3>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            En Bar Capricho del Canal creemos que una buena comida se disfruta más en un ambiente cálido y acogedor. 
+                            Por eso hemos creado un espacio donde las familias, amigos y grupos se sienten como en casa.
+                        </p>
+                        <p class="text-gray-700 mb-6 text-lg leading-relaxed">
+                            Nuestro restaurante cuenta con una amplia terraza perfecta para los días de buen tiempo, 
+                            donde podrás disfrutar de nuestras especialidades al aire libre. Además, somos pet friendly, 
+                            porque sabemos que las mascotas también son parte de la familia.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mt-10">
+                            <div class="flex items-center">
+                                <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-users text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Capacidad</h4>
+                                    <p class="text-gray-600">Hasta 120 personas</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-utensils text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Especialidad</h4>
+                                    <p class="text-gray-600">Carnes a la brasa</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-tree text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Terraza</h4>
+                                    <p class="text-gray-600">Amplia zona exterior</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                    <i class="fas fa-car text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">Parking</h4>
+                                    <p class="text-gray-600">Gratuito para clientes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior del restaurante">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Terraza">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Cocina">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Barbacoa">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Galería de fotos -->
+                <div class="mt-20">
+                    <h3 class="text-3xl font-bold mb-8 text-pizarra text-center">Fotos del restaurante</h3>
+                    <div class="gallery-grid" id="gallery">
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Fachada del local" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Comedor con vistas al patio" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Barra y cafetería" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Parrilla en cocina" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Terraza de noche" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Sala interior" loading="lazy">
+                        </div>
+                        <div class="gallery-card">
+                            <img src="https://images.unsplash.com/photo-1578474846511-04ba529f0b88?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Terraza con toldo" loading="lazy">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    
+        </section>
+
+        <!-- Pestaña UBICACIÓN -->
+        <section id="ubicacion-tab" class="tab-content py-12">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h2 class="section-title text-3xl md:text-4xl font-bold text-pizarra">Ubicación y Contacto</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-6">
+                        Encuéntranos en el corazón de Valladolid. Ven a disfrutar de nuestra cocina y nuestro ambiente único.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Información de contacto -->
+                    <div class="bg-white rounded-2xl p-8 floating-shadow-lg">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Dirección</h3>
+                                <p class="text-gray-700 text-lg">Calle Molino Príncipe 2, 47009 Valladolid</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-8">
+                            <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                <i class="far fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Horario</h3>
+                                <p class="text-gray-700 text-lg">Viernes y Sábado: 12:00 – 0:30</p>
+                                <p class="text-gray-700 text-lg">Domingo: 12:00 – 24:00</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-10">
+                            <div class="bg-brasa text-white p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold">Teléfono</h3>
+                                <p class="text-gray-700 text-lg">682 74 54 35</p>
+                                <p class="text-gray-600 mt-1">Reservas recomendadas, especialmente los fines de semana</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Botones de acción -->
+                        <div class="space-y-4">
+                            <a href="https://wa.me/34682745435?text=Hola,%20me%20gustaría%20hacer%20una%20reserva%20en%20Bar%20Capricho%20del%20Canal" 
+                               target="_blank" 
+                               class="flex items-center justify-center bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md">
+                                <i class="fab fa-whatsapp text-3xl mr-4"></i>
+                                <div class="text-left">
+                                    <div class="text-lg">Contactar por WhatsApp</div>
+                                    <div class="text-sm opacity-90">Respuesta rápida</div>
+                                </div>
+                            </a>
+                            
+                            <a href="tel:682745435" 
+                               class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md">
+                                <i class="fas fa-phone-alt text-2xl mr-4"></i>
+                                <div class="text-left">
+                                    <div class="text-lg">Llamar para reservar</div>
+                                    <div class="text-sm opacity-90">682 74 54 35</div>
+                                </div>
+                            </a>
+                        </div>
+                        
+                        <!-- Servicios adicionales -->
+                        <div class="mt-12 pt-8 border-t border-gray-200">
+                            <h4 class="text-xl font-bold mb-6">Servicios Disponibles</h4>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Parking gratuito</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Terraza exterior</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Acceso para sillas de ruedas</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Pet friendly</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Wi-Fi gratuito</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-check text-green-500 mr-3"></i>
+                                    <span>Grupos y celebraciones</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mapa y alrededores -->
+                    <div>
+                        <!-- Mapa -->
+                        <div class="map-container mb-8">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.6180935840643!2d-4.738305323401054!3d41.66148067129702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd4712b1b6b4676d%3A0x9e3d24406f153b84!2sCalle%20Molino%20Pr%C3%ADncipe%2C%202%2C%2047009%20Valladolid!5e0!3m2!1ses!2ses!4v1712071535475!5m2!1ses!2ses" 
+                                width="100%" 
+                                height="100%" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                        
+                        <!-- Cómo llegar -->
+                        <div class="bg-white rounded-2xl p-6 floating-shadow">
+                            <h4 class="text-xl font-bold mb-6">Cómo llegar</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="text-3xl mb-3">🚗</div>
+                                    <h5 class="font-bold mb-2">En coche</h5>
+                                    <p class="text-sm text-gray-600">Parking gratuito disponible para clientes</p>
+                                </div>
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="text-3xl mb-3">🚌</div>
+                                    <h5 class="font-bold mb-2">En autobús</h5>
+                                    <p class="text-sm text-gray-600">Líneas 1, 5 y 8 - Parada Canal de Castilla</p>
+                                </div>
+                                <div class="text-center p-4 bg-gray-50 rounded-lg">
+                                    <div class="text-3xl mb-3">🚕</div>
+                                    <h5 class="font-bold mb-2">En taxi</h5>
+                                    <p class="text-sm text-gray-600">10 min desde el centro de Valladolid</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Horarios detallados -->
+                <div class="mt-16">
+                    <div class="bg-white rounded-2xl p-8 floating-shadow">
+                        <h3 class="text-2xl font-bold mb-8 text-center">Horarios</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="text-center p-6 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold text-lg mb-3">Viernes</h4>
+                                <p class="text-gray-700">12:00 – 0:30</p>
+                            </div>
+                            <div class="text-center p-6 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold text-lg mb-3">Sábados</h4>
+                                <p class="text-gray-700">12:00 – 0:30</p>
+                            </div>
+                            <div class="text-center p-6 bg-gray-50 rounded-xl">
+                                <h4 class="font-bold text-lg mb-3">Domingos</h4>
+                                <p class="text-gray-700">12:00 – 24:00</p>
+                            </div>
+                        </div>
+                        <p class="text-center mt-8 text-gray-600">
+                            <i class="fas fa-info-circle text-brasa mr-2"></i>
+                            Los horarios pueden variar en fechas especiales. Recomendamos llamar para confirmar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
     <!-- Footer -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-column">
-                    <h3>ChronoBot</h3>
-                    <p>El asistente de calendario inteligente que revoluciona la gestión del tiempo. Automatiza tu agenda y enfócate en lo que realmente importa.</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+    <footer class="bg-pizarra text-white py-12 mt-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="text-4xl mr-3">🥩</span>
+                        <div>
+                            <h3 class="text-2xl font-bold font-serif">Bar Capricho del Canal</h3>
+                            <p class="text-gray-300 text-sm">Carnes a la brasa desde 1998</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        Especialistas en carnes a la brasa y cocina tradicional en Valladolid. 
+                        Ambiente familiar, terraza y parking gratuito.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition-colors">
+                            <i class="fab fa-tripadvisor"></i>
+                        </a>
+                        <a href="#" class="text-gray-300 hover:text-white text-xl transition-colors">
+                            <i class="fab fa-google"></i>
+                        </a>
                     </div>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Contacto</h3>
-                    <ul class="contact-info-list">
-                        <li><i class="fas fa-envelope"></i> info@chronobot.com</li>
-                        <li><i class="fas fa-phone"></i> +1 (555) 123-4567</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Silicon Valley, CA</li>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><button class="tab-trigger text-gray-300 hover:text-white transition-colors" data-tab="inicio">Inicio</button></li>
+                        <li><button class="tab-trigger text-gray-300 hover:text-white transition-colors" data-tab="carta">Carta Completa</button></li>
+                        <li><button class="tab-trigger text-gray-300 hover:text-white transition-colors" data-tab="nosotros">Sobre Nosotros</button></li>
+                        <li><button class="tab-trigger text-gray-300 hover:text-white transition-colors" data-tab="ubicacion">Ubicación y Horarios</button></li>
+                        <li><a href="tel:682745435" class="text-gray-300 hover:text-white transition-colors">Reservar Mesa</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-column">
-                    <h3>Suscríbete</h3>
-                    <p>Recibe las últimas actualizaciones y ofertas especiales directamente en tu correo.</p>
-                    <button class="cta-button" id="subscribe-btn" style="padding: 12px 25px; font-size: 1rem;">Obtener Ofertas</button>
+                <div>
+                    <h4 class="text-xl font-bold mb-6">Contacto</h4>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-brasa mr-3 mt-1"></i>
+                            <p class="text-gray-300">Calle Molino Príncipe 2, 47009 Valladolid</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-brasa mr-3"></i>
+                            <p class="text-gray-300">682 74 54 35</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="far fa-envelope text-brasa mr-3"></i>
+                            <p class="text-gray-300">info@caprichodelcanal.com</p>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-globe text-brasa mr-3"></i>
+                            <a href="https://caprichodelcanal.com" target="_blank" class="text-gray-300 hover:text-white transition-colors">
+                                caprichodelcanal.com
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>&copy; 2023 ChronoBot. Todos los derechos reservados. | Diseño futurista con efectos 3D</p>
+            <div class="border-t border-gray-700 mt-10 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Bar Capricho del Canal. Todos los derechos reservados.</p>
+                <p class="mt-2 text-sm">Diseñado con ❤️ para los amantes de la buena carne</p>
             </div>
         </div>
     </footer>
-    
-    <!-- Modal de demostración -->
-    <div class="modal" id="demo-modal">
-        <div class="modal-content">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <h2>Demo de ChronoBot</h2>
-            <p>Interactúa con el asistente virtual para gestionar tu calendario. Escribe un comando como "Programar reunión el lunes a las 3 PM" y observa cómo ChronoBot responde.</p>
-            
-            <div class="demo-placeholder">
-                <i class="fas fa-robot"></i>
-            </div>
-            
-            <div class="demo-interface">
-                <input type="text" id="demo-input" placeholder="Escribe un comando para ChronoBot..." style="width: 100%; padding: 15px; background-color: rgba(255,255,255,0.1); border: 1px solid var(--primary-color); border-radius: 8px; color: white; font-size: 1rem; margin-bottom: 20px;">
-                <button id="demo-send" class="cta-button" style="padding: 12px 30px;">Enviar</button>
-            </div>
-            
-            <div id="demo-response" style="margin-top: 20px; padding: 15px; background-color: rgba(0, 243, 255, 0.1); border-radius: 8px; border-left: 3px solid var(--primary-color); display: none;">
-                <p><strong>ChronoBot:</strong> <span id="response-text">He programado una reunión para el lunes a las 3 PM en tu calendario.</span></p>
-            </div>
-        </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button class="close" id="closeBtn" aria-label="Cerrar">✕</button>
+        <img id="lightboxImg" alt="">
     </div>
 
     <script>
-        // Elementos del DOM
-        const header = document.getElementById('header');
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const navMenu = document.getElementById('nav-menu');
-        const demoBtn = document.getElementById('demo-btn');
-        const demoModal = document.getElementById('demo-modal');
-        const closeModal = document.getElementById('close-modal');
-        const demoInput = document.getElementById('demo-input');
-        const demoSend = document.getElementById('demo-send');
-        const demoResponse = document.getElementById('demo-response');
-        const responseText = document.getElementById('response-text');
-        const subscribeBtn = document.getElementById('subscribe-btn');
-        const offerBanner = document.getElementById('offer-banner');
-        const closeOffer = document.getElementById('close-offer');
-        const pricingButtons = document.querySelectorAll('.pricing-button');
-        const contactForm = document.getElementById('contact-form');
+        // Establecer el año actual en el footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
         
-        // Contador regresivo
-        const daysElement = document.getElementById('days');
-        const hoursElement = document.getElementById('hours');
-        const minutesElement = document.getElementById('minutes');
-        const secondsElement = document.getElementById('seconds');
-        
-        // Fecha objetivo (3 días desde ahora)
-        const countdownDate = new Date();
-        countdownDate.setDate(countdownDate.getDate() + 3);
-        countdownDate.setHours(23, 59, 59, 0);
-        
-        function updateCountdown() {
-            const now = new Date().getTime();
-            const distance = countdownDate - now;
+        // Configurar navegación de pestañas principales
+        function setupTabsNavigation() {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
             
-            if (distance < 0) {
-                // Si el tiempo ha expirado, reiniciar
-                countdownDate.setDate(countdownDate.getDate() + 3);
-                return;
-            }
-            
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-            
-            daysElement.textContent = days.toString().padStart(2, '0');
-            hoursElement.textContent = hours.toString().padStart(2, '0');
-            minutesElement.textContent = minutes.toString().padStart(2, '0');
-            secondsElement.textContent = seconds.toString().padStart(2, '0');
-        }
-        
-        // Crear partículas flotantes
-        function createParticles() {
-            const particlesContainer = document.getElementById('particles');
-            const particleCount = 30;
-            
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.classList.add('particle');
-                
-                // Tamaño aleatorio entre 2 y 6px
-                const size = Math.random() * 4 + 2;
-                particle.style.width = `${size}px`;
-                particle.style.height = `${size}px`;
-                
-                // Posición aleatoria
-                particle.style.left = `${Math.random() * 100}vw`;
-                particle.style.top = `${Math.random() * 100}vh`;
-                
-                // Color aleatorio
-                const colors = ['#00f3ff', '#9d4edd', '#00ff9d'];
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                particle.style.backgroundColor = color;
-                
-                // Animación con retardo aleatorio
-                particle.style.animationDelay = `${Math.random() * 20}s`;
-                
-                particlesContainer.appendChild(particle);
-            }
-        }
-        
-        // Efecto de scroll en header
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-        
-        // Menú móvil
-        mobileMenuBtn.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            mobileMenuBtn.innerHTML = navMenu.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                navMenu.classList.remove('active');
-                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-        
-        // Animaciones al hacer scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, observerOptions);
-        
-        // Observar elementos con clase 'hidden'
-        document.querySelectorAll('.hidden').forEach(el => {
-            observer.observe(el);
-        });
-        
-        // Modal de demostración
-        demoBtn.addEventListener('click', () => {
-            demoModal.style.display = 'flex';
-            demoInput.focus();
-        });
-        
-        closeModal.addEventListener('click', () => {
-            demoModal.style.display = 'none';
-            demoResponse.style.display = 'none';
-        });
-        
-        // Cerrar modal al hacer clic fuera
-        window.addEventListener('click', (e) => {
-            if (e.target === demoModal) {
-                demoModal.style.display = 'none';
-                demoResponse.style.display = 'none';
-            }
-        });
-        
-        // Cerrar banner de oferta
-        closeOffer.addEventListener('click', () => {
-            offerBanner.style.display = 'none';
-        });
-        
-        // Botones de precios
-        pricingButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const plan = button.getAttribute('data-plan');
-                let message = '';
-                
-                switch(plan) {
-                    case 'basico':
-                        message = "¡Excelente elección! Estás a punto de comenzar con el plan Básico de ChronoBot. Te redirigiremos a la página de pago seguro.";
-                        break;
-                    case 'profesional':
-                        message = "¡Fantástico! Has seleccionado el plan Profesional con 50% de descuento. Esta oferta es por tiempo limitado. Te redirigiremos a la página de pago seguro.";
-                        break;
-                    case 'empresa':
-                        message = "¡Perfecto para tu organización! Un representante de ventas se contactará contigo en menos de 24 horas para personalizar la solución para tu empresa.";
-                        break;
-                    default:
-                        message = "Te redirigiremos a nuestra página de suscripción.";
-                }
-                
-                alert(message);
-                
-                // Simulación de redirección a página de pago
-                if (plan !== 'empresa') {
-                    setTimeout(() => {
-                        alert("(Simulación) Redirigiendo a página de pago seguro... En una implementación real, aquí se procesaría el pago.");
-                    }, 500);
-                }
-            });
-        });
-        
-        // Formulario de contacto
-        if (contactForm) {
-            contactForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Obtener valores del formulario
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                const plan = document.getElementById('plan').value;
-                
-                // Validación simple
-                if (!name || !email || !subject || !message) {
-                    alert("Por favor, completa todos los campos requeridos.");
-                    return;
-                }
-                
-                // Simular envío del formulario
-                alert(`¡Gracias ${name}! Hemos recibido tu mensaje sobre "${subject}". Te contactaremos en ${email} en menos de 24 horas.`);
-                
-                // Limpiar formulario
-                contactForm.reset();
-                
-                // Mostrar confirmación visual
-                const submitButton = contactForm.querySelector('.form-button');
-                const originalText = submitButton.textContent;
-                submitButton.textContent = "¡Mensaje Enviado!";
-                submitButton.style.background = "linear-gradient(45deg, var(--accent-color), var(--primary-color))";
-                
-                setTimeout(() => {
-                    submitButton.textContent = originalText;
-                    submitButton.style.background = "linear-gradient(45deg, var(--primary-color), var(--secondary-color))";
-                }, 3000);
-            });
-        }
-        
-        // Simular respuesta del bot
-        demoSend.addEventListener('click', simulateBotResponse);
-        demoInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                simulateBotResponse();
-            }
-        });
-        
-        function simulateBotResponse() {
-            const command = demoInput.value.toLowerCase().trim();
-            let response = "";
-            
-            if (command.includes('reunión') || command.includes('evento') || command.includes('cita')) {
-                if (command.includes('añadir') || command.includes('programar') || command.includes('crear')) {
-                    response = "He programado una nueva reunión en tu calendario para mañana a las 10:00 AM. ¿Quieres que envíe invitaciones a los participantes?";
-                } else if (command.includes('eliminar') || command.includes('cancelar') || command.includes('borrar')) {
-                    response = "He eliminado la reunión de mañana a las 10:00 AM de tu calendario. También he notificado a los participantes sobre la cancelación.";
-                } else if (command.includes('modificar') || command.includes('cambiar') || command.includes('mover')) {
-                    response = "He cambiado la reunión de mañana a las 2:00 PM. Todos los participantes han sido notificados del cambio.";
-                }
-            } else if (command.includes('disponibilidad') || command.includes('horario') || command.includes('tiempo libre')) {
-                response = "Tienes horario disponible el jueves de 2:00 PM a 4:00 PM y el viernes por la mañana. ¿Quieres programar algo en alguno de esos espacios?";
-            } else if (command.includes('recordatorio') || command.includes('recordar') || command.includes('notificación')) {
-                response = "He configurado un recordatorio para 15 minutos antes de cada reunión. También te enviaré una notificación por correo electrónico.";
-            } else if (command.includes('hola') || command.includes('hi') || command.includes('hello')) {
-                response = "¡Hola! Soy ChronoBot, tu asistente de calendario. Puedo ayudarte a programar reuniones, consultar tu disponibilidad o configurar recordatorios. ¿En qué puedo ayudarte?";
-            } else if (command.includes('precio') || command.includes('costo') || command.includes('plan')) {
-                response = "Tenemos planes desde $9/mes. El plan Profesional (con 50% de descuento) incluye todas las funciones avanzadas por solo $19/mes. ¿Te gustaría conocer más detalles?";
-            } else if (command.includes('contacto') || command.includes('soporte') || command.includes('ayuda')) {
-                response = "Puedes contactar a nuestro equipo de soporte en soporte@chronobot.com o llamar al +1 (555) 123-4567. También puedes completar el formulario de contacto en nuestra página.";
-            } else {
-                response = "He procesado tu solicitud. Como ejemplo, he añadido un evento de demostración a tu calendario para mostrarte cómo funciona ChronoBot.";
-            }
-            
-            responseText.textContent = response;
-            demoResponse.style.display = 'block';
-            demoInput.value = '';
-            
-            // Desplazar hacia la respuesta
-            demoResponse.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        
-        // Botón de suscripción
-        subscribeBtn.addEventListener('click', () => {
-            const email = prompt("¡Obtén ofertas exclusivas! Introduce tu email para recibir un 20% adicional de descuento:");
-            if (email && email.includes('@')) {
-                alert(`¡Gracias! Hemos enviado un código de descuento al 20% a: ${email}. Revisa tu bandeja de entrada.`);
-            } else if (email) {
-                alert("Por favor, introduce un email válido para recibir ofertas especiales.");
-            }
-        });
-        
-        // Efecto de parallax sutil en elementos
-        window.addEventListener('mousemove', (e) => {
-            const x = (window.innerWidth - e.pageX * 2) / 100;
-            const y = (window.innerHeight - e.pageY * 2) / 100;
-            
-            const floatingElements = document.querySelectorAll('.feature-card, .screenshot-item, .testimonial-card, .pricing-card');
-            floatingElements.forEach(el => {
-                el.style.transform = `translateY(${y/10}px) translateX(${x/10}px)`;
-            });
-        });
-        
-        // Inicializar partículas al cargar la página
-        window.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            
-            // Iniciar contador regresivo
-            updateCountdown();
-            setInterval(updateCountdown, 1000);
-            
-            // Asegurar que las animaciones se activen después de un breve retraso
-            setTimeout(() => {
-                document.querySelectorAll('.hidden').forEach(el => {
-                    el.style.transitionDelay = `${Math.random() * 0.5}s`;
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Actualizar botones activos
+                    tabButtons.forEach(b => {
+                        b.classList.remove('active', 'bg-brasa', 'text-white');
+                        if (!b.classList.contains('bg-gray-200')) {
+                            b.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-gray-700');
+                        }
+                    });
+                    
+                    this.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-gray-700');
+                    this.classList.add('active', 'bg-brasa', 'text-white');
+                    
+                    // Mostrar pestaña seleccionada
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    document.getElementById(`${tabId}-tab`).classList.add('active');
+                    
+                    // Cerrar menú móvil si está abierto
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    const menuToggle = document.getElementById('menu-toggle');
+                    
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        const icon = menuToggle.querySelector('i');
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
+                    
+                    // Scroll al inicio de la pestaña
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
                 });
-            }, 300);
-            
-            // Mostrar testimonio destacado automáticamente
-            setTimeout(() => {
-                const popularPlan = document.querySelector('.pricing-card.popular');
-                if (popularPlan) {
-                    popularPlan.style.animation = 'pulse 2s infinite';
-                }
-            }, 2000);
-        });
+            });
+        }
         
-        // Efecto de pulso para el plan popular
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes pulse {
-                0% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0.7); }
-                70% { box-shadow: 0 0 0 10px rgba(0, 255, 157, 0); }
-                100% { box-shadow: 0 0 0 0 rgba(0, 255, 157, 0); }
+        // Configurar botones que activan pestañas
+        function setupTabTriggers() {
+            const tabTriggers = document.querySelectorAll('.tab-trigger');
+            
+            tabTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Encontrar y activar el botón de pestaña correspondiente
+                    const tabButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+                    if (tabButton) {
+                        tabButton.click();
+                    }
+                });
+            });
+        }
+        
+        // Configurar navegación de categorías de carta
+        function setupCategoryNavigation() {
+            const categoryBtns = document.querySelectorAll('.category-btn');
+            const menuCategories = document.querySelectorAll('.menu-category');
+            
+            categoryBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Actualizar botones activos
+                    categoryBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-brasa', 'text-white');
+                        b.classList.add('bg-gray-200', 'text-gray-800');
+                    });
+                    
+                    this.classList.remove('bg-gray-200', 'text-gray-800');
+                    this.classList.add('active', 'bg-brasa', 'text-white');
+                    
+                    // Mostrar categoría seleccionada
+                    menuCategories.forEach(cat => {
+                        cat.classList.remove('active');
+                        cat.classList.add('hidden');
+                    });
+                    
+                    document.getElementById(category).classList.remove('hidden');
+                    document.getElementById(category).classList.add('active');
+                    
+                    // Scroll a la categoría
+                    document.getElementById(category).scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
+            });
+        }
+        
+        // Configurar menú móvil
+        function setupMobileMenu() {
+            const menuToggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            menuToggle.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Cambiar icono
+                const icon = menuToggle.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const mobileLinks = mobileMenu.querySelectorAll('a, button');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                    const icon = menuToggle.querySelector('i');
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                });
+            });
+        }
+        
+        // Configurar lightbox para la galería
+        function setupLightbox() {
+            const gallery = document.getElementById('gallery');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const closeBtn = document.getElementById('closeBtn');
+            
+            if (!gallery) return;
+            
+            gallery.addEventListener('click', (e) => {
+                const img = e.target.closest('img');
+                if(!img) return;
+
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt || '';
+                lightbox.classList.add('open');
+                lightbox.setAttribute('aria-hidden', 'false');
+            });
+
+            function closeLightbox(){
+                lightbox.classList.remove('open');
+                lightbox.setAttribute('aria-hidden', 'true');
+                lightboxImg.src = '';
             }
-        `;
-        document.head.appendChild(style);
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if(e.target === lightbox) closeLightbox();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if(e.key === 'Escape') closeLightbox();
+            });
+        }
+        
+        // Inicializar todo cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', function() {
+            setupTabsNavigation();
+            setupTabTriggers();
+            setupCategoryNavigation();
+            setupMobileMenu();
+            setupLightbox();
+        });
     </script>
 </body>
 </html>
